@@ -1,0 +1,237 @@
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+argglobal
+let s:cpo_save=&cpo
+set cpo&vim
+lnoremap <buffer> <silent> <expr> <BS> g:Vimim_backspace()
+inoremap <buffer> <silent> <BS> =AutoPairsDelete()
+inoremap <buffer> <silent> § =AutoPairsMoveCharacter('''')
+inoremap <buffer> <silent> ¢ =AutoPairsMoveCharacter('"')
+inoremap <buffer> <silent> © =AutoPairsMoveCharacter(')')
+inoremap <buffer> <silent> ¨ =AutoPairsMoveCharacter('(')
+inoremap <buffer> <silent> Û =AutoPairsMoveCharacter('[')
+inoremap <buffer> <silent> î :call AutoPairsJump()a
+inoremap <buffer> <silent> <expr> ð AutoPairsToggle()
+inoremap <buffer> <silent> â =AutoPairsBackInsert()
+inoremap <buffer> <silent> å =AutoPairsFastWrap()
+inoremap <buffer> <silent> ý =AutoPairsMoveCharacter('}')
+inoremap <buffer> <silent> û =AutoPairsMoveCharacter('{')
+inoremap <buffer> <silent> Ý =AutoPairsMoveCharacter(']')
+inoremap <buffer> <silent> Û =AutoPairsMoveCharacter('[')
+vmap <buffer> [] <Plug>Markdown_MoveToPreviousSiblingHeader
+nmap <buffer> [] <Plug>Markdown_MoveToPreviousSiblingHeader
+vmap <buffer> [[ <Plug>Markdown_MoveToPreviousHeader
+nmap <buffer> [[ <Plug>Markdown_MoveToPreviousHeader
+vmap <buffer> ]c <Plug>Markdown_MoveToCurHeader
+nmap <buffer> ]c <Plug>Markdown_MoveToCurHeader
+vmap <buffer> ]u <Plug>Markdown_MoveToParentHeader
+nmap <buffer> ]u <Plug>Markdown_MoveToParentHeader
+vmap <buffer> ][ <Plug>Markdown_MoveToNextSiblingHeader
+nmap <buffer> ][ <Plug>Markdown_MoveToNextSiblingHeader
+vmap <buffer> ]] <Plug>Markdown_MoveToNextHeader
+nmap <buffer> ]] <Plug>Markdown_MoveToNextHeader
+vmap <buffer> ge <Plug>Markdown_EditUrlUnderCursor
+nmap <buffer> ge <Plug>Markdown_EditUrlUnderCursor
+vmap <buffer> gx <Plug>Markdown_OpenUrlUnderCursor
+nmap <buffer> gx <Plug>Markdown_OpenUrlUnderCursor
+inoremap <buffer> <silent>  =AutoPairsDelete()
+lnoremap <buffer> <silent> <expr>  g:Vimim_cycle_vimim()
+lnoremap <buffer> <silent> <expr>  g:Vimim_enter()
+lnoremap <buffer> <silent> <expr>  g:Vimim_one_key_correction()
+lnoremap <buffer> <silent> <expr>  g:Vimim_esc()
+lnoremap <buffer> <silent> <expr>   g:Vimim_space()
+inoremap <buffer> <silent>   =AutoPairsSpace()
+lnoremap <buffer> <expr> ! g:Punctuation("!")
+inoremap <buffer> <silent> " =AutoPairsInsert('"')
+lnoremap <buffer> <expr> # g:Punctuation("#")
+lnoremap <buffer> <expr> $ g:Punctuation("$")
+lnoremap <buffer> <expr> % g:Punctuation("%")
+lnoremap <buffer> <expr> & g:Punctuation("&")
+lnoremap <buffer> ' =g:Vimim_single_quote()
+inoremap <buffer> <silent> ' =AutoPairsInsert('''')
+lnoremap <buffer> <expr> ( g:Punctuation("(")
+inoremap <buffer> <silent> ( =AutoPairsInsert('(')
+lnoremap <buffer> <expr> ) g:Punctuation(")")
+inoremap <buffer> <silent> ) =AutoPairsInsert(')')
+lnoremap <buffer> <expr> * g:Punctuation("*")
+lnoremap <buffer> <expr> + g:Punctuation("+")
+lnoremap <buffer> <expr> , g:Punctuation(",")
+lnoremap <buffer> <expr> - g:Vimim_page("-")
+lnoremap <buffer> <expr> . g:Punctuation(".")
+lnoremap <buffer> <expr> / g:Vimim_hjkl("/")
+lnoremap <buffer> <expr> 0 g:Vimim_label("0")
+lnoremap <buffer> <expr> 1 g:Vimim_label("1")
+lnoremap <buffer> <expr> 2 g:Vimim_label("2")
+lnoremap <buffer> <expr> 3 g:Vimim_label("3")
+lnoremap <buffer> <expr> 4 g:Vimim_label("4")
+lnoremap <buffer> <expr> 5 g:Vimim_label("5")
+lnoremap <buffer> <expr> 6 g:Vimim_label("6")
+lnoremap <buffer> <expr> 7 g:Vimim_label("7")
+lnoremap <buffer> <expr> 8 g:Vimim_label("8")
+lnoremap <buffer> <expr> 9 g:Vimim_label("9")
+lnoremap <buffer> <expr> : g:Punctuation(":")
+lnoremap <buffer> <expr> ; g:Punctuation(";")
+lnoremap <buffer> <expr> < g:Punctuation("<")
+lnoremap <buffer> <expr> = g:Vimim_page("=")
+lnoremap <buffer> <expr> > g:Punctuation(">")
+lnoremap <buffer> <expr> ? g:Vimim_hjkl("?")
+lnoremap <buffer> <expr> @ g:Punctuation("@")
+noremap <buffer> <silent> î :call AutoPairsJump()
+noremap <buffer> <silent> ð :call AutoPairsToggle()
+lnoremap <buffer> <expr> [ g:Vimim_page("[")
+inoremap <buffer> <silent> [ =AutoPairsInsert('[')
+lnoremap <buffer> <expr> ] g:Vimim_page("]")
+inoremap <buffer> <silent> ] =AutoPairsInsert(']')
+lnoremap <buffer> <expr> ^ g:Punctuation("^")
+lnoremap <buffer> <expr> _ g:Punctuation("_")
+inoremap <buffer> <silent> ` =AutoPairsInsert('`')
+lnoremap <buffer> <expr> a g:Vimim_label("a")
+lnoremap <buffer> <expr> b g:Vimim_label("b")
+lnoremap <buffer> <expr> c g:Vimim_label("c")
+lnoremap <buffer> <expr> d g:Vimim_label("d")
+lnoremap <buffer> <expr> e g:Vimim_hjkl("e")
+lnoremap <buffer> <expr> f g:Vimim_label("f")
+lnoremap <buffer> <expr> g g:Vimim_label("g")
+lnoremap <buffer> <expr> h g:Vimim_hjkl("h")
+lnoremap <buffer> <expr> i g:Vimim_hjkl("i")
+lnoremap <buffer> <expr> j g:Vimim_hjkl("j")
+lnoremap <buffer> <expr> k g:Vimim_hjkl("k")
+lnoremap <buffer> <expr> l g:Vimim_hjkl("l")
+lnoremap <buffer> <expr> m g:Vimim_hjkl("m")
+lnoremap <buffer> <expr> n g:Vimim_hjkl("n")
+lnoremap <buffer> <expr> o g:Vimim_hjkl("o")
+lnoremap <buffer> <expr> p g:Vimim_hjkl("p")
+lnoremap <buffer> <expr> q g:Vimim_hjkl("q")
+lnoremap <buffer> <expr> r g:Vimim_hjkl("r")
+lnoremap <buffer> <expr> s g:Vimim_hjkl("s")
+lnoremap <buffer> <expr> t g:Vimim_hjkl("t")
+lnoremap <buffer> <expr> u g:Vimim_hjkl("u")
+lnoremap <buffer> <expr> v g:Vimim_label("v")
+lnoremap <buffer> <expr> w g:Vimim_hjkl("w")
+lnoremap <buffer> <expr> x g:Vimim_label("x")
+lnoremap <buffer> <expr> y g:Vimim_hjkl("y")
+lnoremap <buffer> <expr> z g:Vimim_label("z")
+lnoremap <buffer> <expr> { g:Punctuation("{")
+inoremap <buffer> <silent> { =AutoPairsInsert('{')
+lnoremap <buffer> <expr> } g:Punctuation("}")
+inoremap <buffer> <silent> } =AutoPairsInsert('}')
+lnoremap <buffer> <expr> ~ g:Punctuation("~")
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal keymap=
+setlocal noarabic
+setlocal noautoindent
+setlocal backupcopy=
+setlocal balloonexpr=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=fb:*,fb:-,fb:+,n:>
+setlocal commentstring=<!--%s-->
+setlocal complete=.
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=emoji#complete
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal cursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal noexpandtab
+if &filetype != 'markdown'
+setlocal filetype=markdown
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+\\.\\s\\+\\|^[-*+]\\s\\+\\|^\\[^\\ze[^\\]]\\+\\]:
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=2
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=
+setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255,-,#,.
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:],<:>
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=bin,octal,hex
+setlocal nonumber
+setlocal numberwidth=4
+setlocal omnifunc=VimIM
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=8
+setlocal noshortname
+setlocal nosmartindent
+setlocal softtabstop=0
+setlocal spell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=%!airline#statusline(1)
+setlocal suffixesadd=
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'markdown'
+setlocal syntax=markdown
+endif
+setlocal tabstop=8
+setlocal tagcase=
+setlocal tags=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal undofile
+setlocal undolevels=-123456
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 118 - ((28 * winheight(0) + 29) / 58)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+118
+normal! 05|
+lcd ~/notes/vim
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+" vim: set ft=vim :
